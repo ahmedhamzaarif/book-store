@@ -4,6 +4,7 @@ import Spinner from '../components/Spinner.jsx'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import {useSnackbar} from 'notistack'
+import { baseUrl } from '../services/baseUrl.js'
 
 const EditBook = () => {
   const [title, setTitle] = useState('')
@@ -18,7 +19,7 @@ const EditBook = () => {
   useEffect(() => {
     setLoading(true)
     axios
-      .get(`http://localhost:5555/books/${id}`)
+      .get(`${baseUrl}/books/${id}`)
       .then((response)=>{
         setTitle(response.data.title)
         setAuthor(response.data.author)
@@ -43,7 +44,7 @@ const EditBook = () => {
     setLoading(true)
 
     axios
-      .put(`http://localhost:5555/books/${id}` ,data)
+      .put(`${baseUrl}/books/${id}` ,data)
       .then(()=>{
         setLoading(false)
         enqueueSnackbar('Book Edited Successfully', {variant: 'success'})
