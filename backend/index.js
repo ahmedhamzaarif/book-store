@@ -10,7 +10,7 @@ app.use(express.json())
 // app.use(cors())
 app.use(cors({
     // origin: ['http://localhost:5173'],
-    // origin: ['https://book-store-ahmedhamza.vercel.app/', 'http://book-store-ahmedhamza.vercel.app/'],
+    origin: ['https://book-store-ahmedhamza.vercel.app',],
     origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type']
