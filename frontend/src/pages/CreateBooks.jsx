@@ -24,7 +24,7 @@ const CreateBooks = () => {
     setLoading(true)
 
     axios
-      .post(`${baseUrl}/books` ,data)
+      .post(`${baseUrl}/books/` ,data)
       .then(()=>{
         setLoading(false)
         enqueueSnackbar('Book Created Successfully', {variant: 'success'})

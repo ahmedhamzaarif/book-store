@@ -17,7 +17,7 @@ const Home = () => {
     useEffect(() => {
       setLoading(true)
       axios
-      .get(`${baseUrl}/books`)
+      .get(`${baseUrl}/books/`)
       .then((response)=>{
         setBooks(response.data.data)
         // console.log(response.data.data)

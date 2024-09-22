@@ -15,7 +15,7 @@ const DeleteBook = () => {
   const handleDeleteBook = ()=>{
     setLoading(true)
     axios
-      .delete(`${baseUrl}/${id}`)
+      .delete(`${baseUrl}/books/${id}`)
       .then((response)=>{
         setLoading(false)
         enqueueSnackbar('Book Deleted Sucessfully', {variant: 'success'})
