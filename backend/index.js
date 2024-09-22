@@ -1,7 +1,6 @@
-import express, { request, response } from "express"
+import express from "express"
 import {PORT, mongodbURL} from "./config.js"
 import mongoose from "mongoose"
-import { Book } from './models/bookModel.js';
 import booksRoute from './routes/booksRoute.js'
 import cors from 'cors'
 import 'dotenv/config'
@@ -10,7 +9,8 @@ const app = express()
 app.use(express.json())
 // app.use(cors())
 app.use(cors({
-    origin: ['http://localhost:5173', process.env.FRONTEND_URL],
+    // origin: ['http://localhost:5173'],
+    origin: ['https://book-store-ahmedhamza.vercel.app/'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type']
 }))
